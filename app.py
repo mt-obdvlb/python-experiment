@@ -72,5 +72,9 @@ def visualize():
 def download(filename):
     return send_from_directory(app.config['EXPORT_FOLDER'], filename, as_attachment=True)
 
+# 新增：静态提供 exports 文件夹下的图片
+@app.route('/exports/<path:filename>')
+def exports(filename):
+    return send_from_directory(app.config['EXPORT_FOLDER'], filename)
 if __name__ == '__main__':
     app.run(debug=True)

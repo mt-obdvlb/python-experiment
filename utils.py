@@ -1,4 +1,6 @@
 import os
+import matplotlib
+matplotlib.use('Agg')
 from werkzeug.utils import secure_filename
 import matplotlib.pyplot as plt
 
