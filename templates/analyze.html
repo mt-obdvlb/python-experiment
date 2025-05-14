@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>分析结果</h2>
+<ul>
+  {% for key, value in results.items() %}
+  <li><strong>{{ key }}:</strong> {{ value }}</li>
+  {% endfor %}
+</ul>
+<!-- <a href="{{ url_for('visualize', filename=filename) }}">可视化数据</a> -->
+<a href="/visualize">去可视化</a>
+{% endblock %}

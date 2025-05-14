@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+table.data { border-collapse: collapse; width: 100%; }
+table.data th, table.data td { border: 1px solid #ddd; padding: 8px; }
+.flash { color: red; }

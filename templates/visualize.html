@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>可视化结果</h2>
+{% for plot in plots %}
+<div>
+  <img src="/exports/{{ plot }}" alt="{{ plot }}" class="plot-img">
+</div>
+{% endfor %}
+<a href="/download/{{ plots[0] }}">下载示例图</a>
+{% endblock %}

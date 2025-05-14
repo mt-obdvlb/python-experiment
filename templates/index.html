@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head><title>数据分析系统</title></head>
-<body>
-<h2>上传数据文件（CSV/Excel）</h2>
-<form action="/upload" method="post" enctype="multipart/form-data">
-  <input type="file" name="file" required>
-  <button type="submit">提交</button>
+{% extends "base.html" %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <button type="submit">上传文件</button>
 </form>
-</body>
-</html>
+{% if filename %}
+<h2>文件预览: {{ filename }}</h2>
+{{ tables[0]|safe }}
+<a href="/clean/{{ filename }}">去清洗</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>数据清洗: {{ filename }}</h2>
+<form method="post">
+  <label>缺失值处理：</label>
+  <select name="na_method">
+    <option value="drop">删除缺失</option>
+    <option value="fill_mean">均值填充</option>
+  </select>
+  <label>异常值：</label>
+  <select name="outlier">
+    <option value="">无</option>
+    <option value="remove">移除</option>
+  </select>
+  <button type="submit">执行清洗</button>
+</form>
+{% if tables %}
+<h3>清洗结果预览</h3>
+{{ tables[0]|safe }}
+<a href="/analyze/{{ filename }}">去分析</a>
+{% endif %}
+{% endblock %}

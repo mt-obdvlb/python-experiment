@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>交互式数据分析系统</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1>交互式数据分析系统</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="flash">
+  {% for msg in messages %}
+  <li>{{ msg }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>
